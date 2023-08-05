@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="wid
-    th=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="description" content="Josh ZHang's personal website" /> -->
     <link rel="icon" type="image/x-icon" href="./resources/favicon-32x32.png">
     <title>Developer portfolio</title>
     <script src="https://kit.fontawesome.com/d69f6a2e23.js" crossorigin="anonymous"></script>
@@ -23,7 +23,8 @@
             <nav class="breadcrumbs">
                 <a data-nav="Intro" class="breadcrumbs_item active a b1"><span>Intro &nbsp;<i class="fa-solid fa-house"></i></span></a>
                 <a data-nav="Portfolio" class="breadcrumbs_item a b2"><span>Portfolio &nbsp;<i class="fa-solid fa-folder"></i></span></a> 
-                <a data-nav="Contact" class="breadcrumbs_item b3"><span>Contact &nbsp;<i class="fa-solid fa-envelope"></i></span></a>
+                <a data-nav="Skills" class="breadcrumbs_item a b3"><span>My skills &nbsp;<i class="fa-solid fa-user"></i></span></a> 
+                <a data-nav="Contact" class="breadcrumbs_item b4"><span>Contact &nbsp;<i class="fa-solid fa-envelope"></i></span></a>
             </nav>
         </div>
         <div class="wrapper-right wrapper-nav"> 
@@ -48,190 +49,275 @@
                 <div data-nav="Portfolio" class="setting-nav-item flex-center nav">
                     Portfolio
                 </div>
+                <div data-nav="Skills" class="setting-nav-item flex-center nav">
+                    My skills
+                </div>
                 <div data-nav="Contact" class="setting-nav-item flex-center nav">
                     Contact
                 </div>
             </div>
         </div>
-
-        <div id="page-content-wrapper" class="Intro">
-            
-            <div id="intro-wrapper" class="">
-                <div class="gradient-border"></div>
-                <div id="intro-text-wrapper" class="flex-center">
-                    <div><h2 class="text-line-1 text-line">Hi, my name is Jiaqi Zhang</h2></div>
-                    <div><p class="text-line-2 text-line">I'm a front-end web developer</p></div>
-                    <div><p class="text-line-3 text-line">Take a look at my projects in my <span class="portfolio-nav nav-link"><b>portfolio page</b></span></p></div>
-                    <div><p class="text-line-4 text-line">Also, take a look at my <a href="https://github.com/theRealJqz" class="nav-link" target="_blank">Github Page</a></p></div>
+        <main>
+            <div id="page-content-wrapper" class="Intro">
+                
+                <div id="intro-wrapper" class="">
+                    <div class="gradient-border"></div>
+                    <div id="intro-text-wrapper" class="flex-center">
+                        <div><h2 class="text-line-1 text-line">Hi, my name is Jiaqi Zhang</h2></div>
+                        <div><p class="text-line-2 text-line">I'm a front-end web developer</p></div>
+                        <div><p class="text-line-3 text-line">Take a look at my projects in my <span class="portfolio-nav nav-link"><b>portfolio page</b></span></p></div>
+                        <div><p class="text-line-4 text-line">Also, take a look at my <a href="https://github.com/theRealJqz" class="nav-link-two" target="_blank">Github Page</a></p></div>
+                    </div>
                 </div>
-            </div>
-            <div id="portfolio-wrapper">
-                <h1>My projects</h1>
-                <p>Take a look at my personal projects. They are built in vanilla javascript, css, and html. There are no frameworks or dependencies. It was a major pain, but i felt it was the best way to learn.</p>
-                <hr>
-                <ul class="portfolio-tags-container">
-                    <li id="all-tag" class="tag active" data-tag="all">all</li>
-                    <li class="tag" data-tag="html">html</li>
-                    <li class="tag" data-tag="css">css</li>
-                    <li class="tag" data-tag="javascript">javascript</li>
-                    <li class="tag" data-tag="static">static</li>
-                    <li class="tag" data-tag="SPA">SPA</li>
-                    <li class="tag" data-tag="mobile-first">mobile first</li>
-                    <li class="tag" data-tag="clone">clone</li>
-                </ul>
-                <div id="portfolio-grid">
-                    <div class="portfolio-item" id="hulu-clone">
-                        <div class="portfolio-title-container">
-                            <div class="portfolio-title flex-center">Hulu clone</div>
-                            <div class="title-bar">
-                                <div class="title-green"></div>
-                                <div class="title-yellow"></div>
-                                <div class="title-red"></div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-filter">                   
-                            <div class="portfolio-item-inner flex-center">
-                                <div class="portfolio-item-description flex-center">
-                                A Hulu clone
+                <div id="portfolio-wrapper">
+                    <h1>My projects</h1>
+                    <p>Take a look at my personal projects. They are built in vanilla javascript, css, and html. There are no frameworks or dependencies. It was a major pain, but i felt it was the best way to learn.</p>
+                    <ul class="portfolio-tags-container">
+                        <li id="all-tag" class="tag active" data-tag="all">all</li>
+                        <li class="tag" data-tag="html">html</li>
+                        <li class="tag" data-tag="css">css</li>
+                        <li class="tag" data-tag="javascript">javascript</li>
+                        <li class="tag" data-tag="static">static</li>
+                        <li class="tag" data-tag="SPA">SPA</li>
+                        <li class="tag" data-tag="mobile-first">mobile first</li>
+                        <li class="tag" data-tag="clone">clone</li>
+                    </ul>
+                    <div id="portfolio-grid">
+                        <div class="portfolio-item" id="hulu-clone">
+                            <div class="portfolio-title-container">
+                                <div class="portfolio-title flex-center">Hulu clone</div>
+                                <div class="title-bar">
+                                    <div class="title-green"></div>
+                                    <div class="title-yellow"></div>
+                                    <div class="title-red"></div>
                                 </div>
-                                <a class="portfolio-anchor" href="https://therealjqz.github.io/hulu-clone/" target="_blank">Visit site!</a>
-                                <ul class="project-tags-container">
-                                    <li id="all-tag" class="tag" data-tag="all">all</li>
-                                    <li class="tag" data-tag="html">html</li>
-                                    <li class="tag" data-tag="css">css</li>
-                                    <li class="tag" data-tag="javascript">javascript</li>
-                                    <li class="tag" data-tag="static">static</li>
-                                    <li class="tag" data-tag="clone">clone</li>
-                                </ul>
                             </div>
-                            <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
-                        </div>
-                        
-                        <img src="./resources/portfolio images/Hulu clone thumbnail.png" alt="Project website">
-                    </div>
-
-                    <div class="portfolio-item" id="project-rage">
-                        <div class="portfolio-title-container">
-                            <div class="portfolio-title flex-center">Project rage</div>
-                            <div class="title-bar">
-                                <div class="title-green"></div>
-                                <div class="title-yellow"></div>
-                                <div class="title-red"></div>                             
-                            </div>
-                        </div>
-                        <div class="portfolio-item-filter">                    
-                            <div class="portfolio-item-inner flex-center">
-                                <div class="portfolio-item-description flex-center">
-                                    A very annoying website 
-                                    <br>
-                                    None stop popups!
-                                </div>
-                                <a class="portfolio-anchor" href="https://mighty-spectacular-oriole.glitch.me/" target="_blank">Visit Site!</a>
-                                <ul class="project-tags-container">
-                                    <li id="all-tag" class="tag" data-tag="all">all</li>
-                                    <li class="tag" data-tag="html">html</li>
-                                    <li class="tag" data-tag="css">css</li>
-                                    <li class="tag" data-tag="javascript">javascript</li>
-                                    <li class="tag" data-tag="static">static</li>
-                                    <li class="tag" data-tag="SPA">SPA</li>
-                                </ul>
-                            </div>
-                            <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
-                        </div>
-                        <img src="./resources/portfolio images/project rage thumbnail.png" alt="Project website image">
-                    </div>
-                    <div class="portfolio-item" id="photo-scroller">
-                        <div class="portfolio-title-container">
-                            <div class="portfolio-title flex-center">Photo scroller</div>
-                            <div class="title-bar">
-                                <div class="title-green"></div>
-                                <div class="title-yellow"></div>
-                                <div class="title-red"></div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-filter">
+                            <div class="portfolio-item-filter">                   
                                 <div class="portfolio-item-inner flex-center">
                                     <div class="portfolio-item-description flex-center">
-                                        A generic photo scroller
+                                    A Hulu clone
                                     </div>
-                                    <a class="portfolio-anchor" href="https://therealjqz.github.io/photo-scroller/" target="_blank">Visit Site!</a>
+                                    <a class="portfolio-anchor" href="https://therealjqz.github.io/hulu-clone/" target="_blank">Visit site!</a>
                                     <ul class="project-tags-container">
                                         <li id="all-tag" class="tag" data-tag="all">all</li>
                                         <li class="tag" data-tag="html">html</li>
                                         <li class="tag" data-tag="css">css</li>
                                         <li class="tag" data-tag="javascript">javascript</li>
                                         <li class="tag" data-tag="static">static</li>
-                                        <li class="tag" data-tag="mobile-first">mobile first</li>
-                                    </ul>
-                                </div>
-                            <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
-                        </div>
-                        <img src="./resources/portfolio images/photo scroller thumbnail.png" alt="Project website">
-                    </div>
-                    <div class="portfolio-item" id="web-store">
-                        <div class="portfolio-title-container">
-                            <div class="portfolio-title flex-center">Generic webstore</div>
-                            <div class="title-bar">
-                                <div class="title-green"></div>
-                                <div class="title-yellow"></div>
-                                <div class="title-red"></div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-filter">
-                                <div class="portfolio-item-inner flex-center">
-                                    <div class="portfolio-item-description flex-center">
-                                        An SPA webstore with client side routing
-                                    </div>
-                                    <a class="portfolio-anchor" href="https://abrasive-tide-bard.glitch.me/" target="_blank">Visit Site!</a>
-                                    <ul class="project-tags-container">
-                                        <li id="all-tag" class="tag" data-tag="all">all</li>
-                                        <li class="tag" data-tag="html">html</li>
-                                        <li class="tag" data-tag="css">css</li>
-                                        <li class="tag" data-tag="javascript">javascript</li>
-                                        <li class="tag" data-tag="SPA">SPA</li>
                                         <li class="tag" data-tag="clone">clone</li>
                                     </ul>
                                 </div>
-                            <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
-                        </div>
-                        <img src="./resources/portfolio images/web store thumbnail.png" alt="Project website">
-                    </div>
-                    
-                    <div class="portfolio-item" id="number-scroller">
-                        <div class="portfolio-title-container">
-                            <div class="portfolio-title flex-center">Prisoner puzzle</div>
-                            <div class="title-bar">
-                                <div class="title-green"></div>
-                                <div class="title-yellow"></div>
-                                <div class="title-red"></div>
+                                <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
                             </div>
-                        </div> 
-                        <div class="portfolio-item-filter">
-                             <div class="portfolio-item-inner flex-center">
+                            
+                            <img src="./resources/portfolio images/Hulu clone thumbnail.png" alt="Project website">
+                        </div>
+
+                        <div class="portfolio-item" id="project-rage">
+                            <div class="portfolio-title-container">
+                                <div class="portfolio-title flex-center">Project rage</div>
+                                <div class="title-bar">
+                                    <div class="title-green"></div>
+                                    <div class="title-yellow"></div>
+                                    <div class="title-red"></div>                             
+                                </div>
+                            </div>
+                            <div class="portfolio-item-filter">                    
+                                <div class="portfolio-item-inner flex-center">
                                     <div class="portfolio-item-description flex-center">
-                                        A simulation & visualization of a very strange riddle called the 100 prisoner problem 
+                                        A very annoying website 
+                                        <br>
+                                        None stop popups!
                                     </div>
-                                    <a class="portfolio-anchor" href="https://therealjqz.github.io/prisoner-puzzle/" target="_blank">Visit Site!</a>
-                                        <ul class="project-tags-container">
-                                            <li id="all-tag" class="tag" data-tag="all">all</li>
+                                    <a class="portfolio-anchor" href="https://mighty-spectacular-oriole.glitch.me/" target="_blank">Visit Site!</a>
+                                    <ul class="project-tags-container">
+                                        <li id="all-tag" class="tag" data-tag="all">all</li>
                                         <li class="tag" data-tag="html">html</li>
                                         <li class="tag" data-tag="css">css</li>
                                         <li class="tag" data-tag="javascript">javascript</li>
                                         <li class="tag" data-tag="static">static</li>
+                                        <li class="tag" data-tag="SPA">SPA</li>
                                     </ul>
                                 </div>
-                            <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
+                                <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
+                            </div>
+                            <img src="./resources/portfolio images/project rage thumbnail.png" alt="Project website image">
                         </div>
-                        <img src="./resources/portfolio images/prisoner number scroller thumbnail.png" alt="Project website">
-                    </div>     
+                        <div class="portfolio-item" id="photo-scroller">
+                            <div class="portfolio-title-container">
+                                <div class="portfolio-title flex-center">Photo scroller</div>
+                                <div class="title-bar">
+                                    <div class="title-green"></div>
+                                    <div class="title-yellow"></div>
+                                    <div class="title-red"></div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item-filter">
+                                    <div class="portfolio-item-inner flex-center">
+                                        <div class="portfolio-item-description flex-center">
+                                            A generic photo scroller
+                                        </div>
+                                        <a class="portfolio-anchor" href="https://therealjqz.github.io/photo-scroller/" target="_blank">Visit Site!</a>
+                                        <ul class="project-tags-container">
+                                            <li id="all-tag" class="tag" data-tag="all">all</li>
+                                            <li class="tag" data-tag="html">html</li>
+                                            <li class="tag" data-tag="css">css</li>
+                                            <li class="tag" data-tag="javascript">javascript</li>
+                                            <li class="tag" data-tag="static">static</li>
+                                            <li class="tag" data-tag="mobile-first">mobile first</li>
+                                        </ul>
+                                    </div>
+                                <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
+                            </div>
+                            <img src="./resources/portfolio images/photo scroller thumbnail.png" alt="Project website">
+                        </div>
+                        <div class="portfolio-item" id="web-store">
+                            <div class="portfolio-title-container">
+                                <div class="portfolio-title flex-center">Generic webstore</div>
+                                <div class="title-bar">
+                                    <div class="title-green"></div>
+                                    <div class="title-yellow"></div>
+                                    <div class="title-red"></div>
+                                </div>
+                            </div>
+                            <div class="portfolio-item-filter">
+                                    <div class="portfolio-item-inner flex-center">
+                                        <div class="portfolio-item-description flex-center">
+                                            An SPA webstore with client side routing
+                                        </div>
+                                        <a class="portfolio-anchor" href="https://abrasive-tide-bard.glitch.me/" target="_blank">Visit Site!</a>
+                                        <ul class="project-tags-container">
+                                            <li id="all-tag" class="tag" data-tag="all">all</li>
+                                            <li class="tag" data-tag="html">html</li>
+                                            <li class="tag" data-tag="css">css</li>
+                                            <li class="tag" data-tag="javascript">javascript</li>
+                                            <li class="tag" data-tag="SPA">SPA</li>
+                                            <li class="tag" data-tag="clone">clone</li>
+                                        </ul>
+                                    </div>
+                                <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
+                            </div>
+                            <img src="./resources/portfolio images/web store thumbnail.png" alt="Project website">
+                        </div>
+                        
+                        <div class="portfolio-item" id="number-scroller">
+                            <div class="portfolio-title-container">
+                                <div class="portfolio-title flex-center">Prisoner puzzle</div>
+                                <div class="title-bar">
+                                    <div class="title-green"></div>
+                                    <div class="title-yellow"></div>
+                                    <div class="title-red"></div>
+                                </div>
+                            </div> 
+                            <div class="portfolio-item-filter">
+                                <div class="portfolio-item-inner flex-center">
+                                        <div class="portfolio-item-description flex-center">
+                                            A simulation & visualization of a very strange riddle called the 100 prisoner problem 
+                                        </div>
+                                        <a class="portfolio-anchor" href="https://therealjqz.github.io/prisoner-puzzle/" target="_blank">Visit Site!</a>
+                                            <ul class="project-tags-container">
+                                                <li id="all-tag" class="tag" data-tag="all">all</li>
+                                            <li class="tag" data-tag="html">html</li>
+                                            <li class="tag" data-tag="css">css</li>
+                                            <li class="tag" data-tag="javascript">javascript</li>
+                                            <li class="tag" data-tag="static">static</li>
+                                        </ul>
+                                    </div>
+                                <div class="pulldown-mobile"><div class="pulldown-tab flex-center">About</div></div>
+                            </div>
+                            <img src="./resources/portfolio images/prisoner number scroller thumbnail.png" alt="Project website">
+                        </div>     
+                    </div>
+                </div>
+                <div id="skills-wrapper">
+                    <h1>My skillsets</h1>
+                    <p>From</p>
+                    <div class="skills-intro">
+                        <span class="skills-intro-text">
+                            <span class="bar-description one">
+                                Huh? what's that?
+                            </span>
+                            <p>to</p>
+                            <span class="bar-description two">I'm an unstoppable master!
+                            </span>
+                        </span>
+                        <div class="skill-bar-example"></div>
+                    </div>             
+                    <div class="skills-main-wrapper">
+                        <div class="skill-item">
+                            <span class="skill-name-wrapper">
+                                <span class="skill-name">HTML5</span>
+                                <span class="skill-icon"><i class="fa-brands fa-html5"></i></span>
+                            </span>
+                            <span class="skill-visualized">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-fill="55"></div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name-wrapper">
+                                <span class="skill-name">CSS</span>
+                                <span class="skill-icon"><i class="fa-brands fa-css3-alt"></i></span>
+                            </span>
+                            <span class="skill-visualized">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-fill="55"></div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name-wrapper">
+                                <span class="skill-name">Javascript</span>
+                                <span class="skill-icon"><i class="fa-brands fa-square-js"></i></i></span>
+                            </span>
+                            <span class="skill-visualized">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-fill="50"></div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name-wrapper">
+                                <span class="skill-name">React</span>
+                                <span class="skill-icon"><i class="fa-brands fa-react"></i></i></span>
+                            </span>
+                            <span class="skill-visualized">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-fill="35"></div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name-wrapper">
+                                <span class="skill-name">Web design</span>
+                                <span class="skill-icon"><i class="fa-solid fa-palette"></i></i></span>
+                            </span>
+                            <span class="skill-visualized">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-fill="30"></div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name-wrapper">
+                                <span class="skill-name">Node</span>
+                                <span class="skill-icon"><i class="fa-brands fa-node"></i></i></span>
+                            </span>
+                            <span class="skill-visualized">
+                                <div class="skill-bar-wrapper">
+                                    <div class="skill-bar" data-fill="15"></div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-wrapper">
+                    <h1>Contact me</h1>
+                    <p>If you want to get in touch, please drop an email at <span class="c">jzBusiness4724@gm<span class="hidden">af5js</span>ail.com</span>.</p>
                 </div>
             </div>
-
-            <div id="contact-wrapper">
-                <h1>Contact me</h1>
-                <p>If you want to get in touch, please drop an email at <span class="c">jzBusiness4724@gm<span class="hidden">af5js</span>ail.com</span>.</p>
-            </div>
-        </div>
+        </main>    
     </div>
 
 </body>

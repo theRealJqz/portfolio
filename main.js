@@ -28,7 +28,7 @@ burgerMenu.addEventListener("click", ()=>{//opens and closes menu on clicking bu
 let currentPage = "Intro";
 
 function handleNav(nextPage){
-    const navData = ["Intro", "Portfolio", "Contact"];
+    const navData = ["Intro", "Portfolio", "Skills", "Contact"];
     const currentPageIndex = navData.indexOf(currentPage);
     const nextPageIndex = navData.indexOf(nextPage);
     if(currentPageIndex === nextPageIndex || nextPageIndex < 0){
@@ -155,21 +155,25 @@ menuNavivator.forEach(elem =>{//allows menu navigation
 })
 
 //intro nav to portfolio
-document.querySelector(".portfolio-nav").addEventListener("click", ()=>{
+function handleIntro(){//skip typing on click
+    document.querySelector(".portfolio-nav").addEventListener("click", ()=>{
         handleNav("Portfolio");
-})
-const navigator =  document.querySelectorAll(".nav-icon-wrapper");
-navigator.forEach(element => {//allows slider navigation
-    element.addEventListener("click", ()=>{
-        handleNav(element.dataset.nav);
-    })
-});
+    })//allow navigation for portfolio letter
+    const navigator =  document.querySelectorAll(".nav-icon-wrapper");
+    navigator.forEach(element => {//allows slider navigation
+        element.addEventListener("click", ()=>{
+            handleNav(element.dataset.nav);
+        })
+    });
+}
 //breadcrumbs nav
-document.querySelectorAll(".breadcrumbs_item").forEach(i=>{
-    i.addEventListener("click", ()=>{
-        handleNav(i.dataset.nav)
+function handleBreadCrumbNav(){
+    document.querySelectorAll(".breadcrumbs_item").forEach(i=>{
+        i.addEventListener("click", ()=>{
+            handleNav(i.dataset.nav)
+        })
     })
-})
+}
 //portolio tag handler
 
 function filterTags(activeTags){
@@ -189,43 +193,74 @@ function filterTags(activeTags){
     }
     
 }
-function handleAttribute(tagElem){
-    let tags = [];
-    if(tagElem.dataset.tag === "all"){
-        if(tagElem.classList.contains("active")){
-            return;
-        }
-        else {
-            document.querySelectorAll(".portfolio-tags-container .tag").forEach(i => {
-                i.classList.remove("active");
-            });
-        }
-    }
-    else {
-        document.querySelector("#all-tag").classList.remove("active");
-    }
-    tagElem.classList.toggle("active");
-    document.querySelectorAll(".portfolio-tags-container .tag.active").forEach(i => {
-        tags.push(i.dataset.tag);
+function handleAttribute(){
+    document.querySelectorAll(".portfolio-tags-container .tag").forEach(tag => {
+        tag.addEventListener("click", (item)=>{
+            let tags = [];
+            console.log("click")
+            if(item.target.dataset.tag === "all"){
+                if(item.target.classList.contains("active")){
+                    return;
+                }
+                else {
+                    document.querySelectorAll(".portfolio-tags-container .tag").forEach(i => {
+                        i.classList.remove("active");
+                    });
+                }
+            }
+            else {
+                document.querySelector("#all-tag").classList.remove("active");
+            }
+            item.target.classList.toggle("active");
+            document.querySelectorAll(".portfolio-tags-container .tag.active").forEach(i => {
+                tags.push(i.dataset.tag);
+            })
+            filterTags(tags);
+        })
     })
-    filterTags(tags);
-}
-document.querySelectorAll(".portfolio-tags-container .tag").forEach(tag => {
-    tag.addEventListener("click", (item)=>{
-        handleAttribute(item.target);
-    })
-})
 
-if ( navigator.permissions && navigator.permissions.query ){
-        navigator.permissions.query({ name: "write-on-clipboard" }).then((result) => {
-            if(result.state == "granted" || result.state == "prompt"){
-                const link = document.querySelector(".c");
-                link.style.cursor = pointer;
-                link.addEventListener("click", ()=>{
-                    navigator.clipboard.writeText(link.textContent);
-              })
-            } 
-          });
 }
+
+// skills
+function handleSkills(){
+    document.querySelectorAll(".skill-item").forEach(i=>{
+        const bar = i.querySelector(".skill-bar");
+        bar.style.width = i.querySelector(".skill-bar").dataset.fill + "%";
+    })
+};
+//copy paste
+function handleContactCopy(){
+    // navigator.permissions.query({
+    //     name:'clipboard-write'
+    //   })
+    //   .then((permissionObj) => {
+    //     console.log(permissionObj);
+    //     // ... check the permission object ...
+    //   })
+    //   .catch((error) => {
+    //     // couldn't query the permission
+    //     console.error(error);
+    //   });
+    // if ( navigator.permissions && navigator.permissions.query ){
+    //     console.log("has permission")
+    //         navigator.permissions.query({ name: "write-on-clipboard" }).then((result) => {
+    //             console.log("copyable?");
+    //             if(result.state == "granted" || result.state == "prompt"){
+    //                 const link = document.querySelector(".c");
+    //                 link.style.cursor = pointer;
+    //                 link.addEventListener("click", ()=>{
+    //                     navigator.clipboard.writeText(link.textContent);
+    //               })
+    //             } 
+    //           });
+    // }
+}
+window.addEventListener("DOMContentLoaded", ()=>{
+    handleIntro();
+    handleSkills();
+    handleContactCopy();
+    handleAttribute();
+    handleBreadCrumbNav();
+})
 
 
