@@ -577,7 +577,7 @@ hr{
 }
 .bar-description{
     padding: 10px 4px 10px 4px;
-    border: 1px grey solid;     opacity: 0;
+    border: 1px grey solid;  opacity: 0;
     transform: scale(0.1); margin-top: 20px;
     position: relative; font-size: 0.8em;
     font-style: italic; border-radius: 10px;
@@ -591,13 +591,20 @@ hr{
 @keyframes expandLeft {
     100%{transform: scale(1); left: 0; bottom: 20px; opacity: 1;}
 }
-.bar-description.two{
+.bar-description-two{
+    opacity: 0;
+    animation: expandUp 0.2s linear 0.9s 1 forwards;
+}
+@keyframes expandUp {
+    100%{opacity: 1;}
+}
+.bar-description.three{
     transform-origin: bottom right; right: 10%;
     animation: expandRight 0.5s; text-align: right;
     animation-fill-mode: forwards;
     animation-delay: 1.3s;
 }
-.bar-description.two::before{
+.bar-description.three::before{
     right: 10%;
 }
 @keyframes expandRight {
@@ -613,9 +620,19 @@ hr{
 #contact-wrapper{
     display: none; max-width: 1000px; line-height: 2; margin: 40px;
 }
-.c{padding: 5px 3px;
-    background-color: #264545;
+.c, .clipboard-icon{
+    padding: 5px 3px; 
+    background-color: black;
     color: white;
+    border: 1px solid #353535;
+}
+.clipboard-icon{padding: 5px 12px; cursor: pointer; height: calc(100% + 200px);}
+.clipboard-icon.active{
+    background-color: teal;
+}
+.fa-clipboard-check, .clipboard-icon.active .fa-clipboard-user{display: none;}
+.clipboard-icon.active .fa-clipboard-check, .clipboard-icon .fa-clipboard-user{
+    display: inline;
 }
 #contact-wrapper p{color: var(--intro-p-color);}
 

@@ -26,7 +26,17 @@ burgerMenu.addEventListener("click", ()=>{//opens and closes menu on clicking bu
 });
 //navigation
 let currentPage = "Intro";
-
+function handleNavSlider(slider, name){
+    if(!name){
+        slider.classList.add("hidden");
+        slider.querySelector(".nav-name").textContent = "";
+    }
+    if(name){
+        slider.classList.remove("exit", "hidden");
+        slider.querySelector(".nav-name").textContent = name;
+        slider.dataset.nav = name;
+    }
+}
 function handleNav(nextPage){
     const navData = ["Intro", "Portfolio", "Skills", "Contact"];
     const currentPageIndex = navData.indexOf(currentPage);
@@ -71,25 +81,9 @@ function handleNav(nextPage){
         });
             if(nextPageIndex === 0){
                 document.querySelectorAll(".text-line").forEach(i => i.classList.remove("finished"));
-                navRight.classList.remove("exit", "hidden");
-                navRight.querySelector(".nav-name").textContent = navData[1];
-                navRight.dataset.nav = navData[1];
-                navLeft.classList.add("hidden");
             }
-            if(nextPageIndex === 1){
-                navRight.classList.remove("exit", "hidden");
-                navRight.querySelector(".nav-name").textContent = navData[2];
-                navRight.dataset.nav = navData[2];
-                navLeft.classList.remove("exit", "hidden");
-                navLeft.querySelector(".nav-name").textContent = navData[0];
-                navLeft.dataset.nav = navData[0];
-            }
-            if(nextPageIndex === 2){
-                navRight.classList.add("hidden");
-                navLeft.classList.remove("exit", "hidden");
-                navLeft.querySelector(".nav-name").textContent = navData[1];
-                navLeft.dataset.nav = navData[1];
-            }
+            handleNavSlider(navLeft, navData[nextPageIndex-1]);
+            handleNavSlider(navRight, navData[nextPageIndex+1]);
             currentPage = nextPage;
     }, 1400);
 }
@@ -230,30 +224,29 @@ function handleSkills(){
 };
 //copy paste
 function handleContactCopy(){
-    // navigator.permissions.query({
-    //     name:'clipboard-write'
-    //   })
-    //   .then((permissionObj) => {
-    //     console.log(permissionObj);
-    //     // ... check the permission object ...
-    //   })
-    //   .catch((error) => {
-    //     // couldn't query the permission
-    //     console.error(error);
-    //   });
-    // if ( navigator.permissions && navigator.permissions.query ){
-    //     console.log("has permission")
-    //         navigator.permissions.query({ name: "write-on-clipboard" }).then((result) => {
-    //             console.log("copyable?");
-    //             if(result.state == "granted" || result.state == "prompt"){
-    //                 const link = document.querySelector(".c");
-    //                 link.style.cursor = pointer;
-    //                 link.addEventListener("click", ()=>{
-    //                     navigator.clipboard.writeText(link.textContent);
-    //               })
-    //             } 
-    //           });
-    // }
+    document.querySelector(".clipboard-icon").addEventListener("click", ()=>{
+        const response = document.querySelector(".c").innerText;
+        navigator.clipboard.writeText(response).then(
+            () => {
+                document.querySelector(".clipboard-icon").classList.add("active");
+                setTimeout(() => {
+                    document.querySelector(".clipboard-icon").classList.remove("active");
+                }, 3000);
+            },
+            () => {
+                console.log("Didn't copy :(")
+            },
+          );
+    })
+    document.querySelector(".c").addEventListener("click", (e)=>{
+        if (window.getSelection) {
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(e.target);
+            selection.removeAllRanges();
+            selection.addRange(range);
+      }
+    })
 }
 window.addEventListener("DOMContentLoaded", ()=>{
     handleIntro();
